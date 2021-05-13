@@ -49,24 +49,19 @@ body{
             display:none;
         }
 
-        #hamburger{
+        .ham{
             font-size: 1.5rem;
             color:var(--bs-button);
             z-index: 82;
             cursor:pointer;
-
-
         }
         img{
             width:5rem;
         }
         // mobile 
-        .link-slide{
-            visibility:hidden;
-
-        }
+ 
     
-        #links{
+        .links{
             height: 100vh;
             width: 100%;
             position: absolute;
@@ -74,8 +69,11 @@ body{
             top:0;
             z-index: 80;
             background: var(--bs-section_blue);
+            background:var(--bs-txt-green) ;
+
+    
+        }
           
-            
     
             .links-to{
                 display: flex;
@@ -83,14 +81,19 @@ body{
                 justify-content: center;
                 align-items: center;
                 margin-top:2.5rem;
+
+                a{
+                    padding:1rem;
+                    color:var(--bs-white);
+                    font-weight: 900;
+                    font-size: 1.3rem;
+                    background:var(--bs-txt-green) ;
+                }
+              
             }
 
-            a{
-                padding:1rem;
-                color:var(--bs-white);
-                font-weight: 900;
-                font-size: 1.3rem;
-            }
+          
+            
         }
         .show{
             visibility:hidden;
@@ -140,11 +143,13 @@ body{
                     color:white;
                     padding:.9rem .6rem;
                     border-radius: .3rem;
+                    &:hover{
+                        box-shadow: 0 1px 7px #1b2a4e;
+                    }
                     &:not(:first-child){
                         color:var(--bs-button_txt_color);
                         background:#dadee9;
-                    }
-                  
+                    }             
                     
                 }
             }
@@ -155,8 +160,20 @@ body{
             display:inline;
             width: 22rem;
             margin:0 auto;
+
         }
     }
+}
+@keyframes left-to-right{
+    100%{
+        transform: translate3d(20px,0,0);    
+    }
+
+    50%{
+        transform: translate3d(10px,0,0);    
+  
+    }
+
 }
 
 
@@ -171,6 +188,8 @@ body{
             width: 20rem;;     
             color:var(--bs-txt-light);
             padding: 1.3rem 0rem;
+            animation: left-to-right 3s ease-out;
+
             h2{
                 color:var(--bs-h1-txt);
             }
@@ -262,6 +281,9 @@ body{
                 width:100%;
                 background:var(--bs-txt-green);
                 color:var(--bs-white);
+                &:hover{
+                    box-shadow: 0 1px 5px #1b2a4e;
+                }
             
             }
 
@@ -292,6 +314,11 @@ body{
             padding:12px 20px;
             background: var(--bs-txt-light);
             border-radius: 6rem;
+            &:hover{
+                box-shadow: 0 1px 5px #1b2a4e;
+                transform: scale(1.1);
+                transition: all 1s ease-out;
+            }
         }
 
         h1{
@@ -312,7 +339,7 @@ body{
             border-radius: 4px;
             &:hover{
                 transform: scale(1.1);
-                transition: all 5s ease-out;
+                transition: all 1s ease-out;
             }
         }
 
@@ -337,6 +364,12 @@ body{
             i{
                 color:var(--bs-button);
                 font-size: 1.5rem;
+                       &:hover{
+                box-shadow: 0 1px 5px #1b2a4e;
+                transform: scale(1.1);
+                transition: all 1s ease-out;
+            }
+        }
             }
         }
 
@@ -478,7 +511,7 @@ body{
         padding-top: 1.5rem;
 
         .menu{
-            #links{
+            .links{
                 display:none;
             }
             .menu-items{
@@ -504,7 +537,7 @@ body{
 
             }
     
-            #hamburger{
+            .ham{
              display:none;
             }
             img{
